@@ -1,14 +1,15 @@
 from django.shortcuts import render , redirect
-from .models import Course
+from .models import COURSE
 from .forms import CourseForm
 # Create your views here.
 
+### Function Based Views
 def course_list(request):
-    all = Course.objects.all()
+    all = COURSE.objects.all()
     return render(request,'courses.html',{'data':all})
 
 def course_detail(request,id):
-    course = Course.objects.get(id=id)
+    course = COURSE.objects.get(id=id)
     return render(request,'single.html',{'data':course})
 
 def add_course(request):
@@ -27,7 +28,7 @@ def add_course(request):
 
 
 def edit_course(request,id):
-    course = Course.objects.get(id=id)
+    course = COURSE.objects.get(id=id)
     if request.method == 'POST':
         print('in post ...')
         form = CourseForm(request.POST,request.FILES,instance=course)
@@ -42,6 +43,15 @@ def edit_course(request,id):
 
 
 def delete_course(request,id):
-    course = Course.objects.get(id=id)
+    course = COURSE.objects.get(id=id)
     course.delete()
     return redirect('/udemy')
+
+
+#### Class Based Views 
+from django.views.generic import ListView
+
+
+class CourseList(ListView):
+    model = COURSE
+    template_name = 'courses.html'

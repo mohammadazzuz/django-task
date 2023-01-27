@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from languages.fields import LanguageField
 
 # Create your models here.
-class Course(models.Model):
+class COURSE(models.Model):
     title = models.CharField(max_length=1000)
     subtitle = models.TextField(max_length=5000)
     author = models.ForeignKey(User,related_name='course_author',on_delete=models.CASCADE)
