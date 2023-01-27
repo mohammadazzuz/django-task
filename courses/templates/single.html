@@ -1,14 +1,36 @@
-
-
-
-
 <h1> {{data}}  </h1>
+<a href="/udemy/{{data.id}}/edit"> Edit Course</a>
+<a href="/udemy/{{data.id}}/delete"> Delete Course</a>
+<hr>
+
 
 
 {{data.author}}
-
-<img src="{{data.image.url}}" alt="">
-
+<hr>
 <p>
-    {{data.course|safe}}
+    {{data.subtitle|safe}}
+</P>
+<hr>
+<p>
+    {{data.date_modified|safe}}
+</P>
+<hr>
+<p>
+    {{data.language|safe}}
+</P>
+<hr>
+<p>
+    {{data.course_content|safe}}
+</P>
+<hr>
+<p>
+    {{data.requirements|safe}}
+</P>
+<hr>
+<p>
+    {{data.description|safe}}
+</P>
+<hr>
+<p>
+    {{data.price|safe}}
 </P>

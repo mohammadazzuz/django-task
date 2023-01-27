@@ -6,5 +6,5 @@ class CourseForm(forms.ModelForm):
     class Meta:
         model = Course
         fields = '__all__'
-        #   fields = ['title','content','image','tags','comment']
+        fields = ['title','subtitle','requirements','description','course_content','language','price']
         #exclude = ('author',)

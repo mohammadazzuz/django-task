@@ -1,4 +1,9 @@
+<h1> Blog </h1>
+<a href="/udemy/add"> Add New Course </a>
+<hr>
+
+
 {% for item in data %}
-  <h1> <a href="/udemy/{{item.id}}"> {{item}}  </h1>
+  <h1> <a href="/udemy/{{item.id}}"> {{item}}  </a> </h1>
 
 {% endfor %}
