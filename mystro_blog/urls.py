@@ -17,11 +17,17 @@ from django.contrib import admin
 from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
+from courses.views import course_list , course_detail , add_course
 
 
 
 urlpatterns = [
     path("admin/", admin.site.urls),
+
+    path('udemy/', course_list),
+    path('udemy/add', add_course),
+    path('udemy/<int:id>', course_detail)
+    
     
 ]
 
